@@ -42,6 +42,6 @@ class RegistrerController extends Controller
        Auth::attempt(['email' => $request->email, 'password' => $request->password]);
 
        //Redireccionar
-       return redirect()->route('posts.index');
+       return redirect()->route('posts.index', [Auth::user()->username]);
     }
 }
